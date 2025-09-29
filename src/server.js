@@ -13,6 +13,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 
 import studentsRoutes from './routes/studentsRoutes.js';
 import authRoutes from './routes/authRoutes.js';
+import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 const PORT = process.env.PORT ?? 3030;
@@ -26,6 +27,7 @@ app.use(cookieParser()); // Cookie parser middleware
 // Routes
 app.use(authRoutes);
 app.use(studentsRoutes);
+app.use(userRoutes);
 
 // Handle 404 - Not Found
 app.use(notFoundHandler);
